@@ -1,0 +1,57 @@
+.pagination .mdl-button--raised{
+    background: #1e88e5 !important;
+}
+
+.input-field .prefix.active{
+    color: #66d0e5 !important;
+}
+
+/* label focus color */
+.input-field input[type=text]:focus + label,
+.input-field input[type=number]:focus + label,
+.input-field input[type=date]:focus + label,
+.input-field input[type=tel]:focus + label,
+.input-field textarea.materialize-textarea:focus + label,
+.input-field input[type=email]:focus + label,
+.input-field input[type=password]:focus + label {
+    color: #039be5    !important;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus,
+.input-field input[type=number]:focus,
+.input-field input[type=date]:focus,
+.input-field input[type=tel]:focus,
+.input-field textarea.materialize-textarea:focus,
+.input-field input[type=email]:focus,
+.input-field input[type=password]:focus {
+    border-bottom: 1px solid #039be5    !important;
+    box-shadow: 0 1px 0 0 #039be5    !important;
+}
+
+.pagination .btn{
+    background: #66d0e5 !important;
+    margin: 0 2px;
+}
+
+.pagination .btn.slctd{
+    background: #039be5 !important;
+}
+
+.pagination .btn.disabled{
+    background: #ccc !important;
+}
+
+.datepicker-container .datepicker-date-display{
+    background: #039be5 !important;
+}
+.datepicker-container .datepicker-table td.is-selected {
+    background-color: #039be5 !important;
+}
+
+.datepicker-container .confirmation-btns button{
+    color: #039be5 !important;
+}
+
+.datepicker-container .datepicker-table td.is-today {
+    color: #039be5 !important;
+}

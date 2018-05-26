@@ -1,0 +1,20 @@
+.pagination .mdl-button--raised{
+    background: #00897b !important;
+}
+
+.dropdown-content li>a, .dropdown-content li>span{
+    color: #00897b !important;
+}
+
+.pagination .btn{
+    background: #226956 !important;
+    margin: 0 2px;
+}
+
+.pagination .btn.slctd{
+    background: #00897b !important;
+}
+
+.pagination .btn.disabled{
+    background: #ccc !important;
+}

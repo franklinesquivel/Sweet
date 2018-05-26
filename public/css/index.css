@@ -1,0 +1,135 @@
+.parallax-container {
+  max-height: 380px;
+}
+
+#para {
+  filter: blur(4px);
+}
+
+
+.btn-cont{
+  display: flex;
+  justify-content: center;
+}
+
+.btn-cont > .btn{
+  margin: 0 1%;
+}
+
+.brand-logo{
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  padding-left: 2% !important;
+  color: #fff !important;
+}
+
+.brand-logo.main{
+  font-family: 'Lobster', cursive;
+  font-size: 2.8em !important;
+}
+
+.brand-logo > span{
+  padding-left: 10%;
+}
+
+.slider .indicators .indicator-item.active, .secondary{
+  background-color: #ee6e73 !important;
+}
+
+.center {
+  text-align: center;
+  vertical-align: middle;
+}
+.promo-example {
+  overflow: hidden;
+}
+.promo {
+  width: 100%;
+}
+
+.promo i {
+  margin: 40px 0;
+  color: #ee6e73;
+  font-size: 7rem;
+  display: block;
+}
+
+.promo-caption {
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.justify{
+  text-align: justify;
+}
+
+.alert{
+  padding: 2%;
+  width: 75%;
+  margin: auto;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-cont{
+  box-sizing: border-box;
+  padding: 0px 1%;
+}
+
+.card .card-title{
+  font-size: 20px;
+}
+
+.card .card-image img{
+  height: 300px;
+}
+
+.grid-sizer {width: 100%; }
+.grid-item { width: 20%; }
+
+.grid-sizer,
+.grid-item {
+    width: 33.333%;
+}
+
+.grid-item{
+    padding: 10px;
+}
+
+.grid-item img {
+	display: block;
+	max-width: 100%;
+}
+
+#toast-container{
+    z-index: 100002 !important;
+}
+
+@media(max-width: 70em) and (min-width: 30em){
+	.grid-sizer,
+	.grid-item {
+		width: 50%;
+    }
+    
+    .grid-item.g2{
+        width: 100%;
+    }
+}
+
+@media(max-width: 30em){
+	.grid-sizer,
+	.grid-item, .grid-item.g2 {
+		width: 100%;
+	}
+}
+
+.catalog-cont{
+  margin: 2% auto 0 auto;
+  max-width: 95%;
+  width: 90%;
+}
