@@ -20,6 +20,12 @@
                 </h2>
                 <h5 class="center grey-text text-darken-1">[Iniciar Sesión]</h5>
 
+                @if(session()->has('msg'))
+                    <div class="alert {{ session()->get('msg_type')}} {{ session()->get('msg_type')}}-text lighten-3 text-darken-3 center">
+                        {{ session()->get('msg') }}
+                    </div>
+                @endif
+
                 <form method="POST" class="row" id="frmLogin" action="{{ url('/login') }}">
                     {{ csrf_field() }}
 

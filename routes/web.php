@@ -16,10 +16,14 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/login', 'HomeController@login')->name('login');
 Route::get('/catalog', 'HomeController@Catalog')->name('catalog');
+Route::get('/register', 'HomeController@Register')->name('register');
+Route::post('/register', 'UserController@store')->name('users.store.public');
 
 Route::middleware(['auth.admin'])->group(function(){
     Route::prefix('adm')->group(function(){
         Route::get('/', 'AdminController@index')->name('admin.index');
+
+        Route::resource('users', 'UserController');
 
         Route::resource('products', 'ProductController');
         Route::get('products/json/{product_id}', 'ProductController@getData')->name('products.json.get');

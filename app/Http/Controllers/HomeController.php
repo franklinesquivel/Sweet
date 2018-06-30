@@ -53,4 +53,13 @@ class HomeController extends Controller
             return view('public.catalog', compact('products'));
         }
     }
+
+    public function register()
+    {
+        if(auth()->check()){
+            return redirect('/' . strtolower(auth()->user()->userType->id));
+        }else{
+            return view('public.register');
+        }
+    }
 }

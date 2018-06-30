@@ -48,14 +48,11 @@
             <form class="form-horizontal" method="POST" action="{{ route('password.email') }}">
                 {{ csrf_field() }}
 
-                <div class="input-field col m6 offset-m3 s10 offset-s1 {{ $errors->has('email') ? ' has-error' : '' }}">
-                    <label for="email">Correo electrónico</label>
-                    <input id="email" type="email" class="" name="email" value="{{ old('email') }}" required>
-
+                <div class="input-field col s10 offset-s1 m8 offset-m2">
+                    {!! Form::email('email', null, ['class' => $errors->has('email') ? 'invalid' : '', 'id' => 'email']) !!}
+                    {!! Form::label('email', 'Confirmar correo') !!}
                     @if ($errors->has('email'))
-                        <span class="error-block">
-                            <strong>{{ $errors->first('email') }}</strong>
-                        </span>
+                        <span class="helper-text" data-error="{{ $errors->first('email') }}"></span>
                     @endif
                 </div>
 

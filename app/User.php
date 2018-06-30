@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Contracts\Auth\Access\Authorizable as AutorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Sweet\Notifications\ResetPasswordNotification;
 
 class User extends Authenticatable implements
     AutorizableContract, CanResetPasswordContract
@@ -45,5 +46,16 @@ class User extends Authenticatable implements
     public function isClient()
     {
         return $this->userType->id == 'CLE';
+    }
+
+    /**
+     * Send the password reset notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPasswordNotification($token));
     }
 }
