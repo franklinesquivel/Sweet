@@ -7,7 +7,7 @@
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 @show
 @section('header')
-<nav class="{{ env('PRIMARY_COLOR') }}">
+<nav class="{{ config('app.colors.primary') }}">
         <div class="nav-wrapper">
             <a class="brand-logo main">
                 <img height="40px" width="40px" src="{{ asset('favicon.png') }}">
@@ -56,14 +56,16 @@
                 @endforeach
             </div>
             @else
-                <h5 class="center grey-text lighten-1">El producto no posee imágenes</h5>
+                <div class="container section">
+                    <h5 class="center red-text text-lighten-2">No hay productos registrados :((</h5>
+                </div>
             @endif
         </div>
     </div>
 @endsection
 
 @section('footer')
-    <footer class="page-footer {{ env('PRIMARY_COLOR') }}">
+    <footer class="page-footer {{ config('app.colors.primary') }}">
         <div class="footer-copyright">
           <div class="container center-align white-text">
             © 2018 Copyright {{ config('app.name') }}

@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
-    <title>{{ env('APP_NAME') }} - @yield('titulo')</title>
+    <title>{{ config('app.name') }} - @yield('titulo')</title>
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

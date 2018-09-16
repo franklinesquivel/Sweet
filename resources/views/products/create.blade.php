@@ -48,7 +48,7 @@
             </div>
         </div>
         <div class="col s12 btn-cont">
-            <button class="btnAction btn grey darken-3 waves-effect waves-light"><i class="material-icons left">add</i> Registrar producto</button>
+            <button type="submit" class="btnAction btn grey darken-3 waves-effect waves-light"><i class="material-icons left">add</i> Registrar producto</button>
         </div>
 
     {!! Form::close() !!}
@@ -78,6 +78,12 @@
                         min: 'El precio del producto debe ser mayor que 0'
                     },
                     category_id: 'Seleccione un tipo de producto'
+                },
+                invalidHandler: function(form) {
+                    $('.btnAction').removeAttr('disabled');
+                },
+                submitHandler: function(form) {
+                    $(form).submit();
                 }
             })
         });

@@ -14,8 +14,8 @@
 @section('contenido')
         <div class="front">
             <div class="frmBody">
-                <h2 class="center {{ env('PRIMARY_COLOR') }}-text text-darken-3">
-                    {{ env('APP_NAME') }}
+                <h2 class="center {{ config('app.colors.primary') }}-text text-darken-3">
+                    {{ config('app.name') }}
                     <img height="40px" width="40px" src="{{ asset('favicon.png') }}">
                 </h2>
                 <h5 class="center grey-text text-darken-1">[Iniciar Sesión]</h5>
@@ -60,11 +60,11 @@
                     </div>
 
                     <div class="col s12 submitBtns">
-                        <button type="submit" class="btn waves-effect waves-light {{ env('PRIMARY_COLOR')  }}">
+                        <button type="submit" class="btn waves-effect waves-light {{ config('app.colors.primary')  }}">
                             Iniciar Sesión
                         </button>
 
-                        <a class="btn-flat {{ env('PRIMARY_COLOR')  }}-text waves-effect waves-light" href="{{ route('password.request') }}">
+                        <a class="btn-flat {{ config('app.colors.primary')  }}-text waves-effect waves-light" href="{{ route('password.request') }}">
                             He olvidado mi contraseña
                         </a>
                     </div>

@@ -21,7 +21,7 @@
             @endif
         </div>
         <div class="col s12 btn-cont">
-            <button class="btnAction btn grey darken-3 waves-effect waves-light"><i class="material-icons left">add</i> Registrar categoría</button>
+            <button type="submit" class="btnAction btn grey darken-3 waves-effect waves-light"><i class="material-icons left">add</i> Registrar categoría</button>
         </div>
 
     {!! Form::close() !!}
@@ -39,6 +39,12 @@
                 messages: {
                     name: 'El nombre del producto es requerido',
                     description: 'La descripción del producto es requerida'
+                },
+                invalidHandler: function(form) {
+                    $('.btnAction').removeAttr('disabled');
+                },
+                submitHandler: function(form) {
+                    $(form).submit();
                 }
             })
         });

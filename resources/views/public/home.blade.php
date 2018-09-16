@@ -6,7 +6,7 @@
 @show
 
 @section('header')
-    <nav class="{{ env('PRIMARY_COLOR') }}">
+    <nav class="{{ config('app.colors.primary') }}">
         <div class="nav-wrapper">
             <a class="brand-logo main">
                 <img height="40px" width="40px" src="{{ asset('favicon.png') }}">
@@ -32,67 +32,38 @@
     <div class="slider">
         <ul class="slides">
             <li>
-                <img src="{{ Storage::url('public/home_1.jpg') }}">
-                <div class="caption center-align">
-                    <h3>This is our big Tagline!</h3>
-                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                </div>
-            </li>
-            <li>
-                <img src="{{ Storage::url('public/home_2.jpg') }}">
+                <img src="{{ Storage::url('public/slide1.jpg') }}">
                 <div class="caption left-align">
-                    <h3>Left Aligned Caption</h3>
-                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                    <h3 class="white-text {{ config('app.colors.primary') }} lighten-1 center" style="padding: 5px;">
+                        Micro empresa comercial “Sanncheff Bakery” es una micro empresa comercial que elabora y comercializa repostería, panadería con una gran
+                        variedad de combinaciones, donde cuenta con personal encargado en brindar buen servicio al cliente. 
+                    </h3>
                 </div>
             </li>
             <li>
-                <img src="{{ Storage::url('public/home_3.jpg') }}">
-                <div class="caption right-align">
-                    <h3>Right Aligned Caption</h3>
-                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                <img src="{{ Storage::url('public/slide2.jpg') }}">
+                <div class="caption center-align">
+                    <h2 class="{{ config('app.colors.primary') }}-text grey lighten-5 center" style="padding: 5px;">"Sí somos lo que comemos, somos toda una delicia”</h2>
                 </div>
+            </li>
+            <li>
+                <img src="{{ Storage::url('public/slide3.jpg') }}">
             </li>
         </ul>
     </div>
 @endsection
 
 @section('contenido')
-    <div class="section row {{ env('PRIMARY_COLOR') }}">
-        <h3 class="white-text center">Lorem</h3>
-        <p class="col s10 offset-s1 justify white-text text-darken-3">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quia consequatur expedita molestiae assumenda excepturi est cum repudiandae? Tenetur repellendus fugit vel! Explicabo pariatur, laboriosam accusamus soluta quod nostrum dignissimos!
+    <div class="section row">
+        <h3 class="{{ config('app.colors.primary') }}-text center">Productos nuevos</h3>
+        <p class="col s10 offset-s1 center text-darken-3">
+            Ofrecemos una gran variedad de productos como Pastelería y Panadería.
         </p>
         <div class="btn-cont col s12">
-            <a href="{{ route('catalog') }}" class="btn btn-large waves-effect wave-light secondary"><i class="material-icons right">books</i>Échale un vistazo a nuestros productos!</a>
+            <a href="{{ route('catalog') }}" class="btn btn-large waves-effect wave-light {{ config('app.colors.primary') }}"><i class="material-icons right">books</i>Échale un vistazo a todos nuestros productos!</a>
         </div>
     </div>
-    <div class="row">
-        <div class="col s8 offset-s2">
-            <div class="col s12 m4">
-                <div class="center promo promo-example">
-                    <i class="material-icons">flash_on</i>
-                    <p class="promo-caption">Speeds up development</p>
-                    <p class="light center">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components.</p>
-                </div>
-            </div>
-            <div class="col s12 m4">
-                <div class="center promo promo-example">
-                    <i class="material-icons">flash_on</i>
-                    <p class="promo-caption">Speeds up development</p>
-                    <p class="light center">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components.</p>
-                </div>
-            </div>
-            <div class="col s12 m4">
-                <div class="center promo promo-example">
-                    <i class="material-icons">flash_on</i>
-                    <p class="promo-caption">Speeds up development</p>
-                    <p class="light center">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="section row {{ env('PRIMARY_COLOR') }}">
-        <h3 class="white-text center">Productos nuevos</h3>
+    <div class="section row {{ config('app.colors.primary') }}" style="padding-top: 20px; padding-bottom: 20px;">
         <div class="col s10 offset-s1">
             @if(count($products) > 0)
                 @foreach($products as $p)
@@ -113,17 +84,113 @@
                 </div>
                 @endforeach
             @else
-                <div class="red lighten-4 red-text text-darken-4 alert center">
+                <div class="section red lighten-4 red-text text-darken-4 alert center">
                     No hay productos registrados en la plataforma <i class="material-icons" style="margin-left: 2%;">not_interested</i>
                 </div>
             @endif
+        </div>
+    </div>
+    <div class="section row">
+        <h2 class="center {{ config('app.colors.primary') }}-text">Mision</h2>
+        <p class="col s10 offset-s1 justify">
+            Somos una microempresa que elabora y comercializa productos de panadería, pastelería, comprometida a la originalidad de nuestros productos
+            utilizando materia prima de calidad, que cumplan los requerimientos de los clientes, así logrando un servicio único y de excelencia. 
+        </p>
+    </div>
+    <div class="section row {{ config('app.colors.primary') }}">
+        <h3 class="white-text center">Visión</h3>
+        <p class="col s10 offset-s1 justify white-text text-darken-3">
+            Ser una microempresa líder a nivel nacional en el área de panadería y pastelería, ofreciendo una variedad de presentaciones de alta calidad,
+            que contribuya la expectativa de nuestros clientes. Garantizando la utilización de nuevas tecnologías, procedimientos amigables con el personal y
+            el medio ambiente, respaldado por un recurso humano calificado y comprometidos con los valores de la microempresa.
+        </p>
+    </div>
+    <div class="row">
+        <h2 class="center {{ config('app.colors.primary') }}-text">Valores</h2>
+        <div class="row">
+            <div class="col s8 offset-s2">
+                <div class="col s12 m4">
+                    <div class="center promo promo-example">
+                        <p class="promo-caption">Innovación</p>
+                        <p class="light center">
+                            Fomentar la generación de ideas originales y creativas, mediante la participación del cliente cuya aplicación genere cambios sustanciales y exitoso. 
+                        </p>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="center promo promo-example">
+                        <p class="promo-caption">Trabajo en Equipo</p>
+                        <p class="light center">
+                            Ayudará a tomar decisiones consensuadas y oportunas.
+                        </p>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="center promo promo-example">
+                        <p class="promo-caption">Honestidad</p>
+                        <p class="light center">
+                            Garantizar la calidad de los productos, que se ofrecerá al cliente.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s8 offset-s2">
+                <div class="col s12 m4">
+                    <div class="center promo promo-example">
+                        <p class="promo-caption">Servicio al Cliente</p>
+                        <p class="light center">
+                            Servir con un firme compromiso canalizando los esfuerzos con el fin de asegurar la lealtad de los consumidores.
+                        </p>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="center promo promo-example">
+                        <p class="promo-caption">Respeto</p>
+                        <p class="light center">
+                            Reconocemos y apreciamos de manera integral el valor de la persona con equidad y justicia, a través de un ambiente de armonía, libertad de opinión e igualdad de oportunidades. 
+                        </p>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="center promo promo-example">
+                        <p class="promo-caption">Confianza</p>
+                        <p class="light center">
+                            Realizando nuestras labores de la mejor manera, buscamos satisfacer a cada uno de nuestros clientes prestándoles un servicio cómodo y puntual. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="parallax-container flex justify-center align-center">
+        <div class="parallax"><img src="{{ Storage::url('public/parallax.png') }}"></div>
+        <div class="caption center-align">
+            <h4 class="white-text" style="font-style: italic; font-weight: bold">
+                “Sanncheff Bakery” inicio esta idea comenzó desde Agosto del año 2017 con la idea de un negocio familiar, teniendo en cuenta que la creadora de la
+                idea es chef; igualmente con el apoyo de su familia estando de acuerdo con el negocio y así es como nace esta idea innovadora de repostería.
+            </h4>
+        </div>
+    </div>
+    <div class="section">
+        <h2 class="center {{ config('app.colors.primary') }}-text">Direccion y Contacto</h2>
+        <div class="flex justify-center align-center" style="flex-direction: column">
+            <p class="col s10 offset-s1 justify">
+                Calle al volcán, res. INDEP edif. 0-16 apto 14, Mejicanos
+            </p>
+            <ul>
+                <li><b>Tel Fijo Empresa:</b> 2519-4230</li>
+                <li><b>WhatsApp:</b> 7686-0391 y 7474-7719</li>
+                <li><b>Correo electrónico:</b> emassv@yahoo.com</li>
+            </ul>
         </div>
     </div>
     
 @endsection
 
 @section('footer')
-    <footer class="page-footer {{ env('PRIMARY_COLOR') }}">
+    <footer class="page-footer {{ config('app.colors.primary') }}">
         <div class="footer-copyright">
           <div class="container center-align white-text">
             © 2018 Copyright {{ config('app.name') }}

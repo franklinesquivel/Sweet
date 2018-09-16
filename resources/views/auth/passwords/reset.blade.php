@@ -6,7 +6,7 @@
 @show
 
 @section('header')
-    <nav class="{{ env('PRIMARY_COLOR') }}">
+    <nav class="{{ config('app.colors.primary') }}">
         <div class="nav-wrapper">
             <a class="brand-logo main">
                 <img height="40px" width="40px" src="{{ asset('favicon.png') }}">
@@ -34,8 +34,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-        <h2 class="center {{ env('PRIMARY_COLOR') }}-text text-darken-3">
-            {{ env('APP_NAME') }}
+        <h2 class="center {{ config('app.colors.primary') }}-text text-darken-3">
+            {{ config('app.name') }}
             <img height="40px" width="40px" src="{{ asset('favicon.png') }}">
         </h2>
         <h5 class="center grey-text text-darken-1">[Reestablecer contraseña]</h5>
@@ -73,7 +73,7 @@
                         </div>
 
                         <div class="col s12 btn-cont">
-                            <button type="submit" class="btn {{ env('PRIMARY_COLOR') }}">
+                            <button type="submit" class="btn {{ config('app.colors.primary') }}">
                                 Restaurar clave
                             </button>
                         </div>

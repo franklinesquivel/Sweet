@@ -1,6 +1,11 @@
 <?php
 
 return [
+    
+    'colors' => [
+        'primary' => env('PRIMARY_COLOR', 'blue'),
+        'secondary' => env('SECONDARY_COLOR', 'yellow')
+    ],
 
     /*
     |--------------------------------------------------------------------------

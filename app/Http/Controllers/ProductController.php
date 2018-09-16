@@ -347,7 +347,7 @@ class ProductController extends Controller
                             'msg_type' => 'yellow'
                         ]);
                     }else{
-                        Storage::delete($i->image);
+                        Storage::delete($img->image);
                         $img->delete();
                     }
                 }
